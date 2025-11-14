@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Granma's Front Room Boutique</title>
+
+<style>
+    body {
+        background-color: #f4efe7;
+        font-family: "Georgia", serif;
+        color: #3a2f25;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #c8a98d;
+        padding: 30px 10px;
+        text-align: center;
+        border-bottom: 4px solid #9b7e65;
+    }
+    header h1 {
+        font-size: 48px;
+        letter-spacing: 2px;
+    }
+    header p {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .gallery-section {
+        padding: 25px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .product {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+    }
+    .product img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .product h3 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .product p {
+        margin: 5px 0 10px;
+        line-height: 1.5;
+    }
+    .order-btn {
+        background-color: #9b7e65;
+        color: white;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .order-btn:hover {
+        background-color: #856a54;
+    }
+
+    /* --- FORM MODAL --- */
+    #orderFormModal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 450px;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #c9b8a8;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    button {
+        width: 100%;
+        padding: 14px;
+        background-color: #9b7e65;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    footer {
+        text-align: center;
+        padding: 30px;
+        font-size: 14px;
+        color: #6d5c52;
+    }
+</style>
+
+<script>
+function openForm(productName) {
+    document.getElementById("productInput").value = productName;
+    document.getElementById("orderFormModal").style.display = "flex";
+}
+function closeForm() {
+    document.getElementById("orderFormModal").style.display = "none";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <h1>Granma's Front Room Boutique</h1>
+    <p>Vintage charm. Classic heels. Timeless pieces curated by Sir Pettty.</p>
+</header>
+
+<div class="gallery-section">
+
+    <!-- PRODUCT TEMPLATE (COPY THIS BLOCK FOR EACH SHOE) -->
+    <div class="product">
+        <img src="YOUR_IMAGE_1_URL_HERE" alt="Vintage Heels">
+        <h3>Vintage Leather Heels</h3>
+        <p>Size: 8<br>Price: $45<br>Description: Elegant brown leather heels straight out of Granma’s front room chest.</p>
+        <button class="order-btn" onclick="openForm('Vintage Leather Heels')">Order / Inquiry</button>
+    </div>
+
+    <div class="product">
+        <img src="YOUR_IMAGE_2_URL_HERE" alt="Vintage Heels">
+        <h3>Red Bow Slip-Ons</h3>
+        <p>Size: 7<br>Price: $35<br>Description: Classic red slip-ons with the cute ribbon. Perfect for collectors.</p>
+        <button class="order-btn" onclick="openForm('Red Bow Slip-Ons')">Order / Inquiry</button>
+    </div>
+
+    <!-- Add more products by duplicating these blocks -->
+
+</div>
+
+<!-- ORDER FORM MODAL -->
+<div id="orderFormModal" onclick="closeForm()">
+    <div class="form-container" onclick="event.stopPropagation()">
+        <h2>Order / Inquiry</h2>
+
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <input type="text" id="productInput" name="product" readonly>
+
+            <textarea name="message" placeholder="Your message or questions..." rows="4"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+
+        <button style="margin-top:10px; background:#555;" onclick="closeForm()">Close</button>
+    </div>
+</div>
+
+<footer>
+    © 2025 Granma's Front Room Boutique — Powered by Sir Pettty & ElephantBox Technologies
+</footer>
+
+</body>
+</html>
