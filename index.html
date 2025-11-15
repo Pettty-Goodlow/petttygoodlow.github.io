@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
   <title>Blanco’s Front Room Boutique</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Boutique title font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      
-}
       --bg-cream:#F4EDE2;
       --black:#0F0D0E;
       --purple:#6A2A83;
       --silver:#C5BEB4;
     }
+
     .boutique-title {
-  font-family: 'Cinzel Decorative', cursive;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  color: white;
-  text-shadow: 0px 2px 6px rgba(0,0,0,0.7);
-}
-    
+      font-family: 'Cinzel Decorative', cursive;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      color: white;
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.7);
+    }
 
     * {
       box-sizing: border-box;
@@ -33,9 +33,14 @@
     body {
       background: var(--bg-cream);
       color: var(--black);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
       padding-bottom: 40px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     header {
@@ -45,54 +50,41 @@
       padding: 24px 16px 18px;
     }
 
-    header h1 {
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
-
-    header p.tagline {
+    .tagline {
       margin-top: 8px;
       font-size: 14px;
       font-style: italic;
-      opacity: 0.9;
+      color: var(--silver);
     }
 
     .main-wrapper {
-      max-width: 960px;
-      margin: 24px auto;
+      max-width: 900px;
+      margin: 24px auto 0;
       padding: 0 16px;
     }
 
     .section-title {
-      font-size: 18px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
     }
 
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 16px;
     }
 
     .product-card {
-      background: white;
-      border: 1px solid var(--silver);
-      border-radius: 10px;
+      background: #fff;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-card img {
-      width: 100%;
-      display: block;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
 
     .product-info {
-      padding: 10px 12px 14px;
+      padding: 12px 14px 16px;
     }
 
     .product-name {
@@ -119,88 +111,65 @@
       text-align: center;
       color: #6b625b;
     }
-    header {
-  background: var(--purple);
-  color: white;
-  text-align: center;
-  padding: 24px 16px 18px;
-}
+
+    @media (min-width: 640px) {
+      .products {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .product-card {
+        width: calc(50% - 8px);
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1> class="boutique-title">Blanco’s Front Room Boutique</h1>
+    <h1 class="boutique-title">Blanco’s Front Room Boutique</h1>
     <p class="tagline">“You know the numbers… are you buying or not, love?”</p>
   </header>
 
   <div class="main-wrapper">
-    <h2 class="section-title">Fresh from Blanco’s Front Room</h2>
+    <h2 class="section-title">FRESH FROM BLANCO’S FRONT ROOM</h2>
 
     <div class="products">
       <!-- PRODUCT 1 -->
       <div class="product-card">
-        <img src="IMG_0162.jpeg" alt="">
+        <img src="IMG_0162.jpeg" alt="Air Jordan 11 Concord - Size 5.5Y">
         <div class="product-info">
-          <div class="product-name">Air Jordan 11 “Concord”</div>
-          <div class="product-meta">Size 5.5Y · Vintage condition</div>
+          <div class="product-name">Air Jordan 11 Concord</div>
+          <div class="product-meta">Size 5.5Y</div>
           <div class="price">$75</div>
         </div>
       </div>
 
-      <!-- PRODUCT 2 -->
+      <!-- PRODUCT 2 (edit these details as needed) -->
       <div class="product-card">
-        <img src="IMG_0161.jpeg" alt="">
+        <img src="IMG_0161.jpeg" alt="Product 2">
         <div class="product-info">
-          <div class="product-name">EDIT: Type shoe or item name</div>
-          <div class="product-meta">EDIT: Size · Notes (e.g. gently worn)</div>
+          <div class="product-name">EDIT NAME</div>
+          <div class="product-meta">EDIT SIZE / DETAILS</div>
           <div class="price">$EDIT</div>
         </div>
       </div>
 
-      <!-- PRODUCT 3 -->
+      <!-- PRODUCT 3 (edit these details as needed) -->
       <div class="product-card">
-        <img src="IMG_2422.jpeg" alt="">
+        <img src="IMG_2422.jpeg" alt="Product 3">
         <div class="product-info">
-          <div class="product-name">EDIT: Item name</div>
-          <div class="product-meta">EDIT: Size · Notes</div>
-          <div class="price">$EDIT</div>
-        </div>
-      </div>
-
-      <!-- PRODUCT 4 -->
-      <div class="product-card">
-        <img src="IMG_2410.jpeg" alt="">
-        <div class="product-info">
-          <div class="product-name">EDIT: Item name</div>
-          <div class="product-meta">EDIT: Size · Notes</div>
-          <div class.price">$EDIT</div>
-        </div>
-      </div>
-
-      <!-- PRODUCT 5 -->
-      <div class="product-card">
-        <img src="IMG_2416.jpeg" alt="">
-        <div class="product-info">
-          <div class="product-name">EDIT: Item name</div>
-          <div class="product-meta">EDIT: Size · Notes</div>
-          <div class="price">$EDIT</div>
-        </div>
-      </div>
-
-      <!-- PRODUCT 6 -->
-      <div class="product-card">
-        <img src="IMG_2413.jpeg" alt="">
-        <div class="product-info">
-          <div class="product-name">EDIT: Item name</div>
-          <div class="product-meta">EDIT: Size · Notes</div>
+          <div class="product-name">EDIT NAME</div>
+          <div class="product-meta">EDIT SIZE / DETAILS</div>
           <div class="price">$EDIT</div>
         </div>
       </div>
     </div>
 
     <p class="footer-note">
-      DM to claim. First come, first served. All sales final.
+      Blanco’s Front Room Boutique – curated heat from the front room.
     </p>
   </div>
+
 </body>
 </html>
